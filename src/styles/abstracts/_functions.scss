@@ -1,0 +1,11 @@
+@use "variables" as *;
+
+// Translucent navy used for most borders and shadows.
+@function ink($alpha) {
+  @return rgba($navy, $alpha);
+}
+
+// Translucent white used on dark surfaces.
+@function glass($alpha) {
+  @return rgba($white, $alpha);
+}

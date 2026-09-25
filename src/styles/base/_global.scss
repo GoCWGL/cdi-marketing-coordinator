@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: $paper;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: clip;
+  display: flex;
+  flex-direction: column;
+  background: $paper;
+}

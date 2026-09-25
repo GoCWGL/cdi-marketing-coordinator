@@ -1,0 +1,132 @@
+@use "../abstracts" as *;
+
+.included {
+  @include container;
+  padding-block: $section-space;
+
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  &__intro {
+    @include flex-col(20px);
+    max-width: 640px;
+  }
+
+  &__lead {
+    @include body-copy(16px);
+    max-width: 360px;
+  }
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Card content layouts
+.feature {
+  @include flex-col(16px);
+  padding: 36px;
+
+  &--wide {
+    grid-column: span 2;
+
+    @include mobile {
+      grid-column: span 1;
+    }
+
+    .feature__title {
+      font-size: 22px;
+    }
+  }
+
+  // Text + mini calendar side by side
+  &--split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    align-items: center;
+  }
+
+  // Icon beside text
+  &--row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 22px;
+
+    .feature__body {
+      gap: 12px;
+    }
+  }
+
+  &__body {
+    @include flex-col(16px);
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__text {
+    @include body-copy(15px);
+    max-width: 560px;
+
+    .card--dark & {
+      color: $on-dark;
+    }
+  }
+
+  &__note {
+    font-size: 12.5px;
+    font-style: italic;
+    color: $muted;
+  }
+}
+
+// Decorative month grid with pulsing event days
+.mini-cal {
+  @include flex-col(10px);
+  padding: 18px;
+  border-radius: 18px;
+  background: $paper;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: $muted;
+  }
+
+  &__count {
+    color: $secondary-ink;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  &__cell {
+    height: 30px;
+    border-radius: 8px;
+    background: ink(0.05);
+
+    &--on {
+      animation: calPulse 3.2s ease-in-out infinite;
+    }
+  }
+}

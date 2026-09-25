@@ -1,0 +1,209 @@
+@use "../abstracts" as *;
+
+.package {
+  @include container;
+  padding-bottom: $section-space;
+
+  &__head {
+    @include flex-col(18px);
+    align-items: center;
+    margin-bottom: 56px;
+    text-align: center;
+  }
+
+  &__title {
+    max-width: 720px;
+  }
+
+  &__lead {
+    @include body-copy(17px);
+    max-width: 600px;
+  }
+}
+
+.pk-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  border: 1px solid $line;
+  border-radius: 36px;
+  background: $white;
+  box-shadow: 0 40px 90px ink(0.14);
+  transition:
+    transform 0.5s $ease,
+    box-shadow 0.5s $ease;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 50px 110px ink(0.2);
+  }
+
+  // ---- Dark summary column ----
+  &__aside {
+    position: relative;
+    overflow: hidden;
+    @include flex-col(24px);
+    justify-content: space-between;
+    padding: 48px 44px;
+    background: $deep;
+
+    // Dashed ring in the corner
+    &::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -120px;
+      width: 320px;
+      height: 320px;
+      border: 1.5px dashed rgba($secondary, 0.45);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+  }
+
+  &__shine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, glass(0.14), transparent);
+    animation: shine 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  &__intro,
+  &__cta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__intro {
+    gap: 18px;
+  }
+
+  &__cta {
+    gap: 14px;
+  }
+
+  &__badge {
+    align-self: flex-start;
+    padding: 8px 14px;
+    border-radius: $r-full;
+    background: $secondary;
+    color: $white;
+    @include label-caps(12px, 1.4px);
+    animation: badgeBob 4s ease-in-out infinite;
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 1.15;
+    color: $white;
+  }
+
+  &__text {
+    @include body-copy(16px);
+    color: $on-deep;
+  }
+
+  &__stat {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 20px 0;
+    border-top: 1px solid glass(0.16);
+    border-bottom: 1px solid glass(0.16);
+  }
+
+  &__stat-value {
+    @include display-font(52px);
+    line-height: 1;
+    color: $secondary-light;
+  }
+
+  &__stat-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: $white;
+  }
+
+  &__cta-btn {
+    align-self: flex-start;
+  }
+
+  &__call {
+    font-size: 13px;
+    font-weight: 600;
+    color: $on-deep-muted;
+  }
+
+  // ---- Checklist column ----
+  &__details {
+    @include flex-col(12px);
+    padding: 44px 48px;
+  }
+
+  &__label {
+    @include label-caps(12px, 1.4px);
+    color: $muted;
+  }
+
+  &__list {
+    @include flex-col;
+  }
+
+  &__footnote {
+    font-size: 12.5px;
+    font-style: italic;
+    color: $muted;
+  }
+}
+
+.pk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid $line;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $text;
+  transition:
+    transform 0.3s $ease,
+    color 0.3s $ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__check {
+    @include circle(24px);
+    @include flex-center;
+    flex-shrink: 0;
+    margin-top: 1px;
+    background: $accent;
+    color: $white;
+    transition:
+      background 0.3s $ease,
+      transform 0.3s $ease;
+  }
+
+  &:hover {
+    transform: translateX(6px);
+    color: $deep-dark;
+
+    .pk-item__check {
+      background: $secondary;
+      transform: scale(1.12);
+    }
+  }
+}

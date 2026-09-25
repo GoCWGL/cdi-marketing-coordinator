@@ -1,0 +1,208 @@
+@use "../abstracts" as *;
+
+.approach {
+  position: relative;
+  overflow: hidden;
+  background: $deep-2;
+
+  // Decorative rings
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: -220px;
+    right: -200px;
+    width: 560px;
+    height: 560px;
+    border: 1px solid glass(0.08);
+  }
+
+  &::after {
+    bottom: -260px;
+    left: -160px;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgba($secondary-light, 0.2);
+  }
+
+  &__inner {
+    @include container;
+    @include flex-col(56px);
+    position: relative;
+    z-index: 1;
+    padding-block: $section-space;
+  }
+
+  &__intro {
+    @include flex-col(20px);
+    max-width: 720px;
+  }
+
+  &__lead {
+    @include body-copy(17px, 1.7);
+    color: $on-dark;
+  }
+}
+
+// ---- Stepper ------------------------------------------------------------
+.stepper {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 28px;
+  align-items: stretch;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+
+  &__tabs {
+    @include flex-col(12px);
+  }
+
+  // Panels stack in one grid cell and cross-fade
+  &__panels {
+    display: grid;
+  }
+
+  &:hover .step-tab.is-active .step-tab__bar {
+    animation-play-state: paused;
+  }
+}
+
+.step-tab {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+  padding: 24px 24px 26px;
+  border: 1px solid glass(0.1);
+  border-radius: $r-lg;
+  background: glass(0.03);
+  color: $white;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.35s $ease,
+    border-color 0.35s $ease,
+    transform 0.35s $ease;
+
+  &:hover {
+    background: glass(0.07);
+    transform: translateX(4px);
+  }
+
+  &__num {
+    @include display-font(14px);
+    padding-top: 3px;
+    color: glass(0.5);
+    transition: color 0.3s $ease;
+  }
+
+  &__body {
+    @include flex-col;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  &__sub {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: $on-dark-soft;
+  }
+
+  // Auto-advance progress bar
+  &__bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: $secondary;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  &.is-active {
+    background: glass(0.1);
+    border-color: rgba($secondary-light, 0.6);
+
+    .step-tab__num {
+      color: $secondary-light;
+    }
+
+    .step-tab__bar {
+      animation: fillBar 7s linear forwards;
+    }
+  }
+}
+
+.step-panel {
+  grid-area: 1 / 1;
+  @include flex-col(22px);
+  padding: 40px;
+  border-radius: $r-xl;
+  background: $white;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px) scale(0.98);
+  transition:
+    opacity 0.5s $ease,
+    transform 0.6s $ease,
+    visibility 0.5s;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__num {
+    @include display-font(72px);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px ink(0.22);
+  }
+
+  &__tag {
+    padding: 8px 14px;
+    border-radius: $r-full;
+    background: $secondary-tint;
+    color: $secondary-ink;
+    @include label-caps(12px, 1.4px);
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  &__text {
+    @include body-copy(16px, 1.7);
+  }
+
+  &__points {
+    @include flex-col;
+  }
+}

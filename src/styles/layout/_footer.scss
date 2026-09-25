@@ -1,0 +1,146 @@
+@use "../abstracts" as *;
+
+.site-footer {
+  background: $white;
+  border-top: 1px solid ink(0.1);
+
+  &__inner {
+    @include container;
+    @include flex-col(48px);
+    padding-top: 72px;
+    padding-bottom: 36px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 48px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__brand {
+    @include flex-col(18px);
+  }
+
+  &__logo-link {
+    align-self: flex-start;
+    display: inline-flex;
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  &__tagline {
+    @include body-copy(15px);
+    max-width: 340px;
+  }
+
+  &__col {
+    @include flex-col(16px);
+  }
+
+  &__head {
+    @include label-caps(12px, 1.4px);
+    color: $deep-dark;
+  }
+
+  &__nav {
+    @include flex-col(12px);
+  }
+
+  &__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 800;
+    color: $deep-dark;
+  }
+
+  &__phone-icon {
+    @include circle(40px);
+    @include flex-center;
+    background: $accent-tint;
+    color: $accent-ink;
+  }
+
+  &__cta {
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid ink(0.1);
+  }
+
+  &__copy {
+    font-size: 13px;
+    font-weight: 500;
+    color: $muted;
+  }
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: $muted;
+  transition:
+    color 0.2s ease,
+    transform 0.25s $ease;
+
+  &::before {
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: $secondary;
+    transition: width 0.3s $ease;
+  }
+
+  &:hover {
+    color: $deep-dark;
+
+    &::before {
+      width: 14px;
+    }
+  }
+}
+
+.to-top {
+  @include circle(44px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid ink(0.14);
+  color: $accent-ink;
+  background: $white;
+  transition:
+    background 0.25s $ease,
+    color 0.25s $ease,
+    transform 0.25s $ease,
+    border-color 0.25s $ease;
+
+  &:hover {
+    background: $accent-ink;
+    border-color: $accent-ink;
+    color: $white;
+    transform: translateY(-3px);
+  }
+}

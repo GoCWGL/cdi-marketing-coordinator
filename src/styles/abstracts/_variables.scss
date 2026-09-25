@@ -1,0 +1,64 @@
+// ==========================================================================
+// Design tokens
+// ==========================================================================
+
+// Brand colors
+$ink: #4a5988;
+$navy: #2f3a63; // base for translucent borders & shadows (see ink())
+$deep: #0a4a86;
+$deep-2: #083c6e;
+$deep-dark: #062a4d;
+
+$accent: #0394f9;
+$accent-ink: #0070c0;
+$accent-light: #a8dbff;
+$accent-tint: rgba(3, 148, 249, 0.12);
+
+$secondary: #f26a3e;
+$secondary-ink: #c4441b;
+$secondary-light: #ff9c75;
+$secondary-tint: rgba(242, 106, 62, 0.12);
+
+$orange: #ff6b35;
+$orange-hover: #f25a22;
+$success: #1f9d6b;
+
+// Neutrals
+$text: #1f3350;
+$muted: #5a6180;
+$paper: #f4f7fc;
+$white: #ffffff;
+$line: rgba(47, 58, 99, 0.1);
+
+// Text on dark backgrounds
+$on-dark: #c9cee0;
+$on-dark-soft: #c3c8dc;
+$on-deep: #d3e3f5;
+$on-deep-muted: #a9c4e2;
+$strip-text: #cfe0f2;
+
+// Typography
+$font-body: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-display: var(--font-sora), -apple-system, "Segoe UI", sans-serif;
+
+// Radii
+$r-xl: 32px;
+$r-lg: 24px;
+$r-md: 14px;
+$r-full: 999px;
+
+// Motion
+$ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+// Layout
+$container: 1200px;
+$gutter: 32px;
+$gutter-mobile: 20px;
+$section-space: 112px;
+
+// Breakpoints
+$bp-md: 960px;
+
+// Z-index
+$z-header: 40;
+$z-modal: 2147483000;

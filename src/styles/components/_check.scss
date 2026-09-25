@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.point-check {
+  @include circle(26px);
+  @include flex-center;
+  flex-shrink: 0;
+  background: $accent-tint;
+  color: $accent-ink;
+
+  &--alt {
+    background: $secondary-tint;
+    color: $secondary-ink;
+  }
+}
+
+// Bordered checklist row
+.point {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid $line;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $text;
+}

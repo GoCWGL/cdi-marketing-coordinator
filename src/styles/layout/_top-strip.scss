@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+
+.top-strip {
+  background: $deep-dark;
+  color: $strip-text;
+  font-size: 13px;
+  font-weight: 600;
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 10px;
+  }
+
+  &__lead,
+  &__right {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__lead {
+    gap: 10px;
+  }
+
+  &__right {
+    gap: 18px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  a {
+    color: $white;
+    font-weight: 800;
+    transition: color 0.2s $ease;
+
+    &:hover {
+      color: $secondary-light;
+    }
+  }
+}

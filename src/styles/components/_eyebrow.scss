@@ -1,0 +1,30 @@
+@use "../abstracts" as *;
+
+.eyebrow {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  @include label-caps(12px, 1.6px);
+  color: $secondary-ink;
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: $secondary;
+    border-radius: 2px;
+  }
+
+  &--light {
+    color: $secondary-light;
+
+    &::before {
+      background: $secondary-light;
+    }
+  }
+
+  &--center {
+    align-self: center;
+  }
+}

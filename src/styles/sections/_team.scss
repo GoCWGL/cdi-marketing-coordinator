@@ -1,0 +1,165 @@
+@use "../abstracts" as *;
+
+.team {
+  overflow: hidden;
+  margin-bottom: $section-space;
+  border-top: 1px solid $line;
+  border-bottom: 1px solid $line;
+  background: $white;
+
+  &__inner {
+    @include container;
+    @include flex-col(72px);
+    padding-block: $section-space;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 72px;
+    align-items: center;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__bio {
+    @include flex-col(22px);
+  }
+
+  &__name-group {
+    @include flex-col(8px);
+  }
+
+  &__name {
+    line-height: 1.1;
+  }
+
+  &__role {
+    font-size: 16px;
+    font-weight: 700;
+    color: $secondary-ink;
+  }
+
+  &__para {
+    @include body-copy(16px, 1.75);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  &__tag {
+    padding: 10px 16px;
+    border: 1px solid $line;
+    border-radius: $r-full;
+    background: $paper;
+    font-size: 13px;
+    font-weight: 800;
+    color: $deep;
+  }
+
+  &__do {
+    @include flex-col(32px);
+  }
+
+  &__do-head {
+    @include flex-col(14px);
+  }
+
+  &__do-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+
+.team-photo {
+  position: relative;
+
+  @include mobile {
+    max-width: 420px;
+  }
+
+  &__ring {
+    position: absolute;
+    inset: -18px;
+    border: 1.5px dashed rgba($secondary, 0.5);
+    border-radius: 44px;
+  }
+
+  &__frame {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    border-radius: 32px;
+    box-shadow: 0 40px 80px ink(0.22);
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s $ease;
+  }
+
+  &:hover &__img {
+    transform: scale(1.04);
+  }
+
+  &__badge {
+    right: -20px;
+    bottom: 36px;
+  }
+}
+
+.do-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.do-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid $line;
+  border-radius: 18px;
+  background: $white;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $text;
+  transition:
+    transform 0.35s $ease,
+    border-color 0.35s $ease,
+    box-shadow 0.35s $ease;
+
+  .point-check {
+    transition:
+      transform 0.4s $ease,
+      background 0.3s $ease,
+      color 0.3s $ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($accent, 0.45);
+    box-shadow: 0 20px 40px ink(0.1);
+
+    .point-check {
+      transform: scale(1.15) rotate(-10deg);
+      background: $accent;
+      color: $white;
+    }
+  }
+}

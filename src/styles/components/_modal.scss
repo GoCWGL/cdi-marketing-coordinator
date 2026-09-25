@@ -1,0 +1,77 @@
+@use "../abstracts" as *;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  @include flex-center;
+  padding: 20px;
+  background: rgba($deep-dark, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fadeIn 0.3s ease both;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  background: $white;
+  border-radius: 28px;
+  box-shadow: 0 40px 100px rgba($deep-dark, 0.35);
+  animation: popIn 0.45s $ease both;
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    @include circle(44px);
+    @include flex-center;
+    border: 1.5px solid ink(0.12);
+    background: $white;
+    color: $deep-dark;
+    cursor: pointer;
+    transition:
+      background 0.2s $ease,
+      color 0.2s $ease,
+      transform 0.3s $ease;
+
+    &:hover {
+      background: $deep-dark;
+      color: $white;
+      transform: rotate(90deg);
+    }
+  }
+
+  &__header {
+    @include flex-col(10px);
+    padding: 36px 36px 12px;
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 1.2;
+    padding-right: 40px;
+  }
+
+  &__text {
+    @include body-copy(15px, 1.6);
+  }
+
+  &__body {
+    padding: 16px 36px 36px;
+  }
+
+  &__form {
+    height: 500px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+}

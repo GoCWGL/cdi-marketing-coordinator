@@ -1,0 +1,65 @@
+@use "../abstracts" as *;
+
+.how {
+  @include container;
+  padding-top: $section-space;
+
+  &__head {
+    @include flex-col(20px);
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.work-card {
+  position: relative;
+  @include flex-col(14px);
+  padding: 32px;
+  border: 1px solid $line;
+  border-radius: $r-lg;
+  background: $white;
+  transition:
+    transform 0.4s $ease,
+    box-shadow 0.4s $ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px ink(0.12);
+  }
+
+  &__num {
+    @include display-font(13px);
+    letter-spacing: 1.4px;
+    color: $secondary-ink;
+  }
+
+  &__line {
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background: $secondary;
+    transition: width 0.5s $ease;
+  }
+
+  &:hover &__line {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 21px;
+  }
+
+  &__text {
+    @include body-copy(15px);
+  }
+}

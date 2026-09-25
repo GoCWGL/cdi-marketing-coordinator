@@ -1,0 +1,38 @@
+// ==========================================================================
+// Main stylesheet — imported once in src/app/layout.tsx
+// ==========================================================================
+
+// Abstracts (keyframes are the only abstract that emits CSS)
+@use "abstracts/keyframes";
+
+// Base
+@use "base/reset";
+@use "base/typography";
+@use "base/global";
+
+// Utilities
+@use "utilities/animations";
+
+// Components
+@use "components/buttons";
+@use "components/eyebrow";
+@use "components/dots";
+@use "components/check";
+@use "components/card";
+@use "components/stat-badge";
+@use "components/modal";
+
+// Layout
+@use "layout/top-strip";
+@use "layout/header";
+@use "layout/footer";
+
+// Sections
+@use "sections/hero";
+@use "sections/marquee";
+@use "sections/approach";
+@use "sections/how";
+@use "sections/included";
+@use "sections/team";
+@use "sections/package";
+@use "sections/cta";

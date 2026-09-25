@@ -1,0 +1,103 @@
+@use "../abstracts" as *;
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: $white;
+  border: 1px solid $line;
+  border-radius: $r-lg;
+  transition:
+    box-shadow 0.4s $ease,
+    transform 0.4s $ease,
+    border-color 0.4s $ease;
+
+  // Orange bar that wipes in on hover
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: $secondary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s $ease;
+  }
+
+  &:hover {
+    box-shadow: 0 30px 60px ink(0.12);
+    transform: translateY(-6px);
+    border-color: ink(0.16);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .icon-badge {
+      transform: rotate(-8deg) scale(1.08);
+      background: $secondary;
+      color: $white;
+
+      &--alt {
+        background: $accent;
+      }
+    }
+
+    .card-more {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  &--dark {
+    background: $deep;
+    border-color: $deep;
+
+    h3 {
+      color: $white;
+    }
+
+    // Dark cards keep their icon colors on hover
+    &,
+    &:hover {
+      .icon-badge {
+        background: rgba($accent-light, 0.16);
+        color: $accent-light;
+      }
+    }
+  }
+}
+
+.icon-badge {
+  @include flex-center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: $r-md;
+  background: $accent-tint;
+  color: $accent-ink;
+  transition:
+    transform 0.5s $ease,
+    background 0.3s $ease,
+    color 0.3s $ease;
+
+  &--alt {
+    background: $secondary-tint;
+    color: $secondary-ink;
+  }
+}
+
+.card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: $accent-ink;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity 0.35s $ease,
+    transform 0.35s $ease;
+}

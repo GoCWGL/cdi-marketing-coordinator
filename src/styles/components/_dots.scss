@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+// Pulsing orange dot
+.pulse-dot {
+  @include circle(7px);
+  display: inline-block;
+  background: $secondary;
+  animation: stripDot 2s ease-in-out infinite;
+}
+
+// Blinking green "live" dot
+.live-dot {
+  @include circle(8px);
+  display: inline-block;
+  background: $success;
+  animation: blink 1.6s ease-in-out infinite;
+}
