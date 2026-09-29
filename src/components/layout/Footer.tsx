@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/assets/images/logo.webp";
 import { NAV_LINKS, PHONE, SITE } from "@/data/site";
 import SignupButton from "@/components/ui/SignupButton";
@@ -12,9 +13,9 @@ export default function Footer() {
       <div className="site-footer__inner">
         <div className="site-footer__grid">
           <div className="site-footer__brand">
-            <a href="#top" className="site-footer__logo-link">
+            <Link href="/" className="site-footer__logo-link">
               <Image className="site-footer__logo" src={logo} alt="Champion Dentists & Doctors" />
-            </a>
+            </Link>
             <p className="site-footer__tagline">
               Empowering Dental Practices to Thrive — through community outreach, referral
               partnerships, and qualified leads.
@@ -25,9 +26,9 @@ export default function Footer() {
             <span className="site-footer__head">Explore</span>
             <nav className="site-footer__nav" aria-label="Footer">
               {NAV_LINKS.map((link) => (
-                <a key={link.href} className="footer-link" href={link.href}>
+                <Link key={link.href} className="footer-link" href={link.href}>
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

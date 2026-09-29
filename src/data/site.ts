@@ -14,11 +14,18 @@ export const PHONE = {
 export type NavLink = { href: string; label: string };
 
 export const NAV_LINKS: NavLink[] = [
-  { href: "#approach", label: "Approach" },
-  { href: "#included", label: "What's Included" },
-  { href: "#team", label: "Meet Emmie" },
-  { href: "#package", label: "Package" },
+  { href: "/#approach", label: "Approach" },
+  { href: "/#included", label: "What's Included" },
+  { href: "/#team", label: "Meet Emmie" },
+  { href: "/#package", label: "Package" },
 ];
+
+// LeadConnector (GoHighLevel) booking calendar
+export const BOOKING_CALENDAR = {
+  id: "8Nlc9Ia77Z8bzFVeZxir",
+  iframeId: "8Nlc9Ia77Z8bzFVeZxir_1790379721529",
+  src: "https://api.leadconnectorhq.com/widget/booking/8Nlc9Ia77Z8bzFVeZxir",
+};
 
 // LeadConnector (GoHighLevel) embedded sign-up form
 export const SIGNUP_FORM = {
