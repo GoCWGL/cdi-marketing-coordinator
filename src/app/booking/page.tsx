@@ -6,7 +6,7 @@ import BookingAside from "@/components/booking/BookingAside";
 export const metadata: Metadata = {
   title: "Book a Call | Champion Dentists",
   description:
-    "Schedule a one-on-one call with Emmie Saavedra to see how a Business Liaison Manager can grow your dental practice in the community.",
+    "Schedule a one-on-one call with Emmie Saavedra to see how a Community Liaison Coordinator can grow your practice in the community.",
 };
 
 export default function BookingPage() {

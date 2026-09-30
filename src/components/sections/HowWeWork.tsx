@@ -4,7 +4,7 @@ export default function HowWeWork() {
   return (
     <section id="how" className="how">
       <div className="how__head reveal">
-        <span className="eyebrow">How the Work Is Done</span>
+        <span className="eyebrow">Service Standards</span>
         <h2 className="section-title">Clear standards behind every event.</h2>
       </div>
 

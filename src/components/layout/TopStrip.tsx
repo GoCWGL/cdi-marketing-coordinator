@@ -6,7 +6,7 @@ export default function TopStrip() {
       <div className="top-strip__inner">
         <span className="top-strip__lead">
           <span className="pulse-dot" />
-          Done-for-you community outreach for dental practices
+          Done-for-you community outreach for healthcare practices
         </span>
         <span className="top-strip__right">
           <span>{SITE.tagline}</span>

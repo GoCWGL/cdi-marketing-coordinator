@@ -1,4 +1,4 @@
-import { PACKAGE_ITEMS } from "@/data/home";
+import { PACKAGE_ITEMS, PACKAGE_TERMS } from "@/data/home";
 import { PHONE } from "@/data/site";
 import SignupButton from "@/components/ui/SignupButton";
 import { CheckIcon } from "@/components/ui/Icons";
@@ -12,8 +12,8 @@ export default function Package() {
           One package. Everything your practice needs to grow in the community.
         </h2>
         <p className="package__lead">
-          Every practice is different — Emmie will walk you through the details and tailor the
-          program to your goals.
+          A six-month engagement built around measurable deliverables. Emmie will walk you through
+          the details and tailor the program to your goals.
         </p>
       </div>
 
@@ -21,11 +21,11 @@ export default function Package() {
         <div className="pk-card__aside">
           <span className="pk-card__shine" />
           <div className="pk-card__intro">
-            <span className="pk-card__badge">Community Coordinator</span>
-            <h3 className="pk-card__title">Business Liaison Manager Package</h3>
+            <span className="pk-card__badge">Community Outreach</span>
+            <h3 className="pk-card__title">Community Liaison Coordinator Package</h3>
             <p className="pk-card__text">
-              A dedicated Business Liaison Manager who plans your outreach, represents your
-              practice in the community, and brings you qualified leads every month.
+              A dedicated Community Liaison Coordinator who strategizes your outreach, represents
+              your practice in the community, and creates a consistent flow of qualified leads.
             </p>
           </div>
 
@@ -59,6 +59,16 @@ export default function Package() {
             ))}
           </ul>
           <p className="pk-card__footnote">*Production and printing fees billed separately.</p>
+
+          <span className="pk-card__label pk-card__label--terms">Engagement terms</span>
+          <dl className="pk-terms">
+            {PACKAGE_TERMS.map((term) => (
+              <div key={term.value} className="pk-terms__item">
+                <dt className="pk-terms__value">{term.value}</dt>
+                <dd className="pk-terms__label">{term.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

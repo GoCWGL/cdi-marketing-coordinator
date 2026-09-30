@@ -49,7 +49,7 @@ export default function Team() {
         <div className="team__do">
           <div className="team__do-head reveal">
             <span className="eyebrow">What I Do</span>
-            <h3 className="team__do-title">As a Business Liaison Manager</h3>
+            <h3 className="team__do-title">As a Community Liaison Coordinator</h3>
           </div>
           <div className="do-grid reveal">
             {LIAISON_DUTIES.map((duty) => (

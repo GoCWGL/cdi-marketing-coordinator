@@ -46,10 +46,10 @@ export default function Included() {
       <div className="included__head reveal">
         <div className="included__intro">
           <span className="eyebrow">What&apos;s Included</span>
-          <h2 className="section-title">Everything your Business Liaison Manager delivers.</h2>
+          <h2 className="section-title">Everything your Community Liaison Coordinator delivers.</h2>
         </div>
         <p className="included__lead">
-          One partner to plan, show up, follow through, and grow your presence in the community.
+          One dedicated partner to generate awareness, build relationships, and grow your presence in the community.
         </p>
       </div>
 

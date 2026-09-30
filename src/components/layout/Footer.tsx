@@ -17,8 +17,8 @@ export default function Footer() {
               <Image className="site-footer__logo" src={logo} alt="Champion Dentists & Doctors" />
             </Link>
             <p className="site-footer__tagline">
-              Empowering Dental Practices to Thrive — through community outreach, referral
-              partnerships, and qualified leads.
+              Empowering practices to thrive — through community outreach, referral partnerships,
+              and qualified leads.
             </p>
           </div>
 

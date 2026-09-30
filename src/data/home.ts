@@ -34,8 +34,8 @@ export type Stat = { value: string; label: [string, string]; tone?: "deep" };
 
 export const HERO_STATS: Stat[] = [
   { value: "4+", label: ["community events", "every month"] },
-  { value: "1", label: ["dedicated Business", "Liaison Manager"], tone: "deep" },
-  { value: "Every", label: ["lead captured and", "organized for you"] },
+  { value: "1", label: ["dedicated Community", "Liaison Coordinator"], tone: "deep" },
+  { value: "6-mo", label: ["engagement with a", "results review"] },
 ];
 
 // ---- Marquee ------------------------------------------------------------
@@ -62,38 +62,38 @@ export type Step = {
 export const STEPS: Step[] = [
   {
     title: "Plan the outreach calendar",
-    summary: "At least 4 events a month, matched to your market.",
+    summary: "A minimum of 4 events a month, matched to your market.",
     tag: "Plan",
     description:
-      "We build a monthly outreach calendar of community events chosen to fit your target market — and we consider any event suggestions you send us.",
+      "We strategize a monthly outreach calendar of community events selected for your target market. You are always welcome to submit events for our consideration.",
     points: [
       "Minimum of 4 community events every month",
       "Events matched to your target market",
-      "Your event suggestions always considered",
+      "Your event suggestions welcomed",
     ],
   },
   {
     title: "Represent your practice",
-    summary: "We show up for you across the community.",
+    summary: "A trusted presence on your behalf.",
     tag: "Represent",
     description:
-      "We attend and take part in each event on your behalf — from chambers of commerce to strategic organizations — building trust in your name.",
+      "We attend each event on your behalf — from business chambers of commerce to strategic organizations — building community trust and strengthening your local reputation.",
     points: [
-      "Chambers of commerce and strategic organizations",
+      "Business chambers of commerce and strategic organizations",
       "Your name, logo, and branding used only for outreach and program promotion",
-      "Relationships with local health business providers",
+      "Established, ongoing relationships with local health business providers",
     ],
   },
   {
     title: "Capture & convert leads",
-    summary: "Every lead organized and followed through.",
+    summary: "Measurable results, not just activity.",
     tag: "Convert",
     description:
-      "We capture and organize every lead for your team, then help turn those conversations into new patients.",
+      "We capture and organize qualified leads for your team and support their conversion — while your practice retains scheduling and patient care.",
     points: [
       "Lead information captured and organized for you",
       "Referral partner relationships identified and fostered",
-      "Conversion through communication, patient advocacy, and integrity",
+      "Conversion supported through communication, patient advocacy, and integrity",
     ],
   },
 ];
@@ -106,17 +106,17 @@ export const WORK_ITEMS: WorkItem[] = [
   {
     label: "Event Selection",
     title: "Events that fit your market",
-    text: "We identify and choose events that fit your target market, and consider any event suggestions you submit.",
+    text: "We identify and select a minimum of four events each month based on your target market. Your suggestions are always welcome.",
   },
   {
     label: "Lead Capture",
-    title: "Leads captured & organized",
-    text: "We capture and organize lead information for you, so your team can follow up with confidence.",
+    title: "Leads captured & supported",
+    text: "We capture and organize lead information and support conversion through communication and patient advocacy. Your team manages scheduling and patient care.",
   },
   {
     label: "Your Brand",
     title: "Your brand, used responsibly",
-    text: "Your name, logo, and branding are used only for community outreach and program promotion.",
+    text: "Your name, logo, and branding are used under a non-exclusive license, solely for community outreach and program promotion.",
   },
 ];
 
@@ -133,38 +133,38 @@ export type Feature = {
 
 export const CALENDAR_FEATURE: Feature = {
   title: "Monthly Outreach Calendar",
-  text: "A strategic calendar of at least 4 community events every month — chambers of commerce, strategic organizations, and events that fit your target market — carried out on your behalf.",
+  text: "A strategic calendar of at least four community events every month — business chambers of commerce, strategic organizations, and events selected for your target market — attended on your behalf.",
   icon: CalendarIcon,
 };
 
 export const FEATURES: Feature[] = [
   {
-    title: "Qualified Leads Every Month",
-    text: "Qualified leads captured, organized, and handed to your team — with support converting them into patients.",
+    title: "A Consistent Flow of Qualified Leads",
+    text: "Qualified leads from your local community, captured and organized for your team — with support converting them into patients.",
     icon: TargetIcon,
     dark: true,
   },
   {
-    title: "Community & Referral Partnerships",
-    text: "We establish community partnerships and identify and foster referral partner relationships.",
+    title: "Referral Partner Relationships",
+    text: "We identify and foster referral partner relationships that keep new patients coming to your practice.",
     icon: UsersIcon,
     alt: true,
   },
   {
     title: "Health Provider Relationships",
-    text: "We build and maintain relationships with local health business providers who can send patients your way.",
+    text: "We establish and maintain relationships with local health business providers across your community.",
     icon: HeartPlusIcon,
   },
   {
     title: "Marketing Materials",
-    text: "Help creating brochures, flyers, and promotional items for your outreach.",
+    text: "Assistance creating brochures, flyers, and promotional items that support your outreach.",
     icon: MegaphoneIcon,
     alt: true,
     note: "Production and printing fees billed separately.",
   },
   {
     title: "New Growth Opportunities",
-    text: "We keep an eye out for new opportunities to grow your practice in the community.",
+    text: "We continually identify new opportunities to grow your practice in the community.",
     icon: TrendUpIcon,
   },
 ];
@@ -200,12 +200,12 @@ export const EMMIE = {
 };
 
 export const LIAISON_DUTIES = [
-  "Strategize and attend community events monthly (minimum of 4 events)",
+  "Strategize and attend community events monthly (a minimum of four events)",
   "Establish and maintain relationships with local health business providers",
   "Generate qualified leads",
   "Identify and foster referral partner relationships",
   "Assist in the creation of marketing assets such as brochures, flyers, and promotional items",
-  "Represent the business in community events like business chambers of commerce and strategic organizations",
+  "Represent the practice at community events such as business chambers of commerce and strategic organizations",
   "Build community trust and strengthen the practice's local reputation",
   "Identify new growth opportunities",
   "Facilitate lead conversion through effective communication, strong patient advocacy, and fostering integrity",
@@ -214,13 +214,21 @@ export const LIAISON_DUTIES = [
 // ---- Package ------------------------------------------------------------
 
 export const PACKAGE_ITEMS = [
-  "Monthly outreach calendar with a minimum of 4 community events",
+  "Monthly outreach calendar with a minimum of four community events",
   "Strategy for and attendance at every event on your behalf",
   "Representation at chambers of commerce and strategic organizations",
   "Qualified leads captured and organized for your team",
-  "Community and referral partner relationships",
-  "Relationships with local health business providers",
-  "Help creating brochures, flyers, and promotional items*",
+  "Referral partner relationships identified and fostered",
+  "Established relationships with local health business providers",
+  "Assistance creating brochures, flyers, and promotional items*",
   "Lead conversion support through communication, patient advocacy, and integrity",
-  "Ongoing search for new growth opportunities",
+  "Ongoing identification of new growth opportunities",
+];
+
+export type PackageTerm = { value: string; label: string };
+
+export const PACKAGE_TERMS: PackageTerm[] = [
+  { value: "6 months", label: "Minimum engagement, followed by a joint results review" },
+  { value: "30 days", label: "Written notice to end the agreement after the minimum term" },
+  { value: "Pause anytime", label: "After month six — resume within 30 days to keep your rate" },
 ];

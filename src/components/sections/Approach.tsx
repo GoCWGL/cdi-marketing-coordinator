@@ -10,9 +10,9 @@ export default function Approach() {
             We represent your practice in the community — every month.
           </h2>
           <p className="approach__lead">
-            Your Business Liaison Manager plans your outreach, shows up at local chambers of
-            commerce and strategic organizations, and turns new connections into qualified leads
-            through clear communication, strong patient advocacy, and integrity.
+            Your Community Liaison Coordinator strategizes your outreach, represents you at business
+            chambers of commerce and strategic organizations, and turns new connections into
+            qualified leads — with deliverables that are measurable, not just activity-based.
           </p>
         </div>
 

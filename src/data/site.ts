@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Champion Dentists",
-  title: "Community Coordinator | Champion Dentists",
+  title: "Community Liaison Coordinator | Champion Dentists",
   description:
-    "A dedicated Business Liaison Manager who represents your dental practice in the community: 4+ events a month, referral partnerships, and qualified leads.",
+    "A dedicated Community Liaison Coordinator who represents your practice in the community: a minimum of four events a month, referral partnerships, and a consistent flow of qualified leads.",
   tagline: "Empowering Dental Practices to Thrive.",
 };
 

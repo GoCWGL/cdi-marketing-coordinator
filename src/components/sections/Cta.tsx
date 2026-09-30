@@ -12,7 +12,7 @@ export default function Cta() {
           <h2 className="section-title section-title--light cta__title">
             Foster connections and generate leads for you through committed networking.
           </h2>
-          <p className="cta__lead">Speak with our team about which plan fits your practice.</p>
+          <p className="cta__lead">Speak with our team to learn how the program fits your practice.</p>
           <div className="cta__actions">
             <SignupButton>Sign Up Now</SignupButton>
             <a className="btn-outline btn-outline--light" href={PHONE.href}>

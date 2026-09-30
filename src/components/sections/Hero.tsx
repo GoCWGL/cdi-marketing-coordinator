@@ -14,9 +14,9 @@ export default function Hero() {
           <span className="hero-pill rise d1">
             <span className="hero-pill__tag">
               <span className="pulse-dot" />
-              Community Coordinator
+              Community Outreach
             </span>
-            Business Liaison Manager Program
+            Community Liaison Coordinator Program
           </span>
 
           <h1 className="hero__title">
@@ -45,9 +45,9 @@ export default function Hero() {
           </h1>
 
           <p className="hero__lead rise d3">
-            A dedicated Business Liaison Manager who represents your practice in the community —
-            attending at least 4 events a month, building referral partnerships, and generating
-            qualified leads to strengthen your local reputation.
+            A dedicated Community Liaison Coordinator who represents your practice in the
+            community — attending a minimum of four events a month, building referral partnerships,
+            and creating a consistent flow of qualified leads into your practice.
           </p>
 
           <div className="hero__actions rise d4">

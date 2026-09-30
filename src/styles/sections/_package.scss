@@ -207,3 +207,39 @@
     }
   }
 }
+
+.pk-card__label--terms {
+  margin-top: 20px;
+}
+
+.pk-terms {
+  @include flex-col(10px);
+
+  &__item {
+    display: grid;
+    grid-template-columns: 124px 1fr;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 18px;
+    border: 1px solid $line;
+    border-radius: 16px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+
+  &__value {
+    font-size: 15px;
+    font-weight: 800;
+    color: $deep-dark;
+  }
+
+  &__label {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $muted;
+  }
+}

@@ -31,7 +31,7 @@ export default function BookingHero() {
         </h1>
         <p className="booking-hero__lead rise d3">
           Pick a time that works for you. We&apos;ll learn about your practice, your market, and
-          your goals — and map out how a Business Liaison Manager can grow your patient base.
+          your goals — and map out how a Community Liaison Coordinator can grow your patient base.
         </p>
         <ul className="booking-hero__highlights rise d4">
           {BOOKING_HIGHLIGHTS.map((item) => (
