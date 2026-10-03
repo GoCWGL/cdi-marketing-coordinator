@@ -6,17 +6,6 @@ import { UserPlusIcon } from "@/components/ui/Icons";
 export default function HeroOrbit() {
   return (
     <div className="hero-visual rise d5">
-      <div className="hero-visual__panel" aria-hidden="true">
-        <svg>
-          <defs>
-            <pattern id="panelDots" width="22" height="22" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.4" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#panelDots)" />
-        </svg>
-      </div>
-
       <div className="orbit orbit--outer">
         {ORBIT_CHIPS.map(({ label, icon: Icon, left, top }) => (
           <div key={label} className="orbit__slot" style={{ left, top }}>

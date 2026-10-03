@@ -181,27 +181,6 @@
     margin-top: 8px;
   }
 
-  &__panel {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    border: 1px solid ink(0.06);
-    border-radius: 40px;
-    background: $paper;
-
-    svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    circle {
-      fill: $accent;
-      fill-opacity: 0.16;
-    }
-  }
-
   // Pause every orbiting element while hovered
   &:hover {
     .orbit,
