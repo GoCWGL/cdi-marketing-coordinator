@@ -4,6 +4,7 @@ import { SignupModalProvider } from "@/components/providers/SignupModalProvider"
 import TopStrip from "@/components/layout/TopStrip";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import PageLoader from "@/components/layout/PageLoader";
 import { SITE } from "@/data/site";
 import "@/styles/main.scss";
 
@@ -28,6 +29,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${sora.variable} ${manrope.variable}`}>
       <body>
+        <noscript>
+          <style>{".page-loader{display:none}"}</style>
+        </noscript>
+        <PageLoader />
         <SignupModalProvider>
           <div className="page" id="top">
             <TopStrip />

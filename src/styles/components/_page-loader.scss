@@ -1,0 +1,74 @@
+@use "../abstracts" as *;
+
+// Full-screen loader shown on first visit and between page navigations
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal + 1;
+  @include flex-col(28px);
+  align-items: center;
+  justify-content: center;
+  background: $paper;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.5s $ease,
+    visibility 0s linear 0.5s;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+      opacity 0.25s ease,
+      visibility 0s;
+  }
+
+  &__logo {
+    display: block;
+    width: auto;
+    height: 72px;
+    animation: loaderPulse 1.6s ease-in-out infinite;
+
+    @include mobile {
+      height: 56px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__dot {
+    @include circle(12px);
+    background: $accent;
+    animation: loaderBounce 1.2s $ease infinite;
+
+    &:nth-child(2) {
+      background: $secondary;
+      animation-delay: 0.15s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
+
+  &__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  @include reduced-motion {
+    &__logo,
+    &__dot {
+      animation: none;
+    }
+  }
+}
